@@ -72,19 +72,29 @@ python -c "import nltk; nltk.download('punkt')"
 ---
 
 ## Technical Design & Methodology
+
+This project is built on a **dual-model architecture** to ensure both high-level mood assessment and granular emotional insight, explicitly balancing accuracy with context sensitivity.
+
 ### Sentiment Analysis
 
     Model: cardiffnlp/twitter-roberta-base-sentiment-latest
+    
     Use: Excellent at understanding general sentiment, even during ambiguity
 
     Process: Tokenize → Compute softmax → Calculate Score: (Positive - Negative) → Map score to mood thresholds.
+#### Justification for using RoBERTa:
+I initially prototyped with **VADER (Valence Aware Dictionary and sEntiment Reasoner)**, but quickly found it failed in real-world scenarios, particularly with modern slang, emojis, and contextual ambiguities (e.g., failing to distinguish "This job is sick" from "I am sick of this job"). The RoBERTa model is **excellent at understanding general sentiment even with messy, abbreviated language**, providing a robust foundation.
 
 ### Contextual Emotion Extraction
 
     Model: monologg/bert-base-cased-goemotions-original
+    
     Use: Good at picking up specific emotions (anger, joy, excitement), but struggles with ambiguity
 
     Process: Tokenize → Apply sigmoid to logits → Zero-out neutral label → Filter for top 3 strongest.
+
+#### Justification for GoEmotions:
+While I tested several other multi-label BERT models, this model, trained on the **GoEmotions dataset** (known for its fine-grained classification across 27 distinct emotion labels), consistently **outshined other models** in its ability to detect specific psychological states like *admiration*, *grief*, or *surprise*. Its strength lies in picking up specific emotions, which is useful in a journaling tool.
 
 ---
 
