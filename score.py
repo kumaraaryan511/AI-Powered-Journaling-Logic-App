@@ -20,7 +20,7 @@ def score(text):
 
 
 
-text = " ".join(sys.argv[1:])
-print(score(text))
+#text = " ".join(sys.argv[1:])
+#print(score(text))
 
 
