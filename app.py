@@ -5,17 +5,7 @@ import sqlite3
 from datetime import datetime
 
 
-
-#historyfile = Path("history.json")
-
 DB_PATH = Path("history.db")
-
-#if historyfile.exists():
-#    with open(historyfile, "r") as f:
-#        history = json.load(f)
-#else:
-#    history = []
-
 
 
 def init_db():
@@ -32,12 +22,23 @@ def save_history(text, result):
     conn.commit()
     conn.close()
     
-#def save_history(text, result):
-#    history.append({"text": text, "score": result})
-#    with open(historyfile, "w") as f:
-#        json.dump(history, f, indent=2)
-        
-        
+    
+def get_last_entries(n=3):
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("SELECT text, score FROM history ORDER BY id DESC LIMIT ?", (n,))
+    rows = cur.fetchall()
+    conn.close()
+    return rows
+
+def get_all_entries():
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+    cur.execute("SELECT text, score, timestamp FROM history ORDER BY id ASC")
+    rows = cur.fetchall()
+    conn.close()
+    return rows
+
         
 def sentiment_label(score):
     ranges = [(0.8,  "Very Happy"), (0.5,  "Happy"), (0.2,  "Moderately Happy"), (0.1,  "A little happy"), (-0.1, "Neutral"), (-0.2, "A little Sad"), (-0.5, "Moderately Sad"), (-0.8, "Sad"),]
@@ -47,6 +48,8 @@ def sentiment_label(score):
             return label
     
     return "Really Sad"
+    
+    
     
 def safe_score(text):
 
@@ -62,23 +65,69 @@ def safe_score(text):
         return 0.0
     
     return max(min(float(r), 1.0), -1.0)
+    
+    
+    
+    
+def show_help():
+    print("""
+Available Commands:
+  1      Enter text and get mood analysis
+  2      Show last 3 entries
+  3      Show all entries
+  help   Show this help menu
+  exit   Quit the program
+""")
+
+
 
 
 def main():
     init_db()
-    print("Give me some text!  (Press Ctrl+C to exit)")
+    print("Welcome to the Sentiment CLI.")
+    show_help()
     while True:
         try:
-            text = input("> ").strip()
-            if not text:
-                continue
-            if len(text) > 5000:
-                text = text[:5000]
-            result = safe_score(text)
-            print(sentiment_label(result))
+            cmd = input("\nCommand > ").strip().lower()
+            if cmd == "1":   
+                text = input("> ").strip()
+                if not text:
+                    continue
+                if len(text) > 5000:
+                    text = text[:5000]
+                result = safe_score(text)
+                print(sentiment_label(result))
+                
+                #print(result)
+                save_history(text, result)
+            elif cmd == "2":
+                rows = get_last_entries(3)
+                if not rows:
+                    print("No history found.")
+                else:
+                    print("\nLast 3 entries:")
+                    for t, s in rows:
+                        print(f"Mood: {sentiment_label(s)}  | Text: {t}")
+                        
+            elif cmd == "3":
+                rows = get_all_entries()
+                if not rows:
+                    print("No history found.")
+                else:
+                    print("\nAll entries:")
+                    for t, s, ts in rows:
+                        print(f"Timestamp: [{ts}]  |  Mood: {sentiment_label(s)}  | Text: {t}")
+
+
+            elif cmd == "exit":
+                print("bye!")
+                break
+                
+            else:
+                show_help()
+
             
-            #print(result)
-            save_history(text, result)
+            
         except KeyboardInterrupt:
             print("\nExiting.")
             break
