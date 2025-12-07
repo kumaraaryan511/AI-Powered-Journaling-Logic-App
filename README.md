@@ -17,6 +17,7 @@ This project focuses on performance and robustness while maintaining clean logic
 
 ---
 
+
 ## Background
 
 In real-world applications, raw textual input is rarely well-structured. The tool is designed to handle linguistic ambiguity and context by addressing common challenges like mixed slang, idioms, emojis, and inconsistent grammar.
@@ -28,6 +29,49 @@ In real-world applications, raw textual input is rarely well-structured. The too
 | "lmao that was wild 😂" | Positive / Amusement | Emoji conveys strong sentiment |
 
 ---
+
+
+## Installation & Setup
+
+Since this project relies on powerful pre-trained transformer models and platform-specific Python environments, the setup steps must be clearly defined.
+
+### 1. Dependencies and Environment
+
+The application requires **Python 3.10+** and several external libraries.
+
+* `torch`: The core framework for running the model inference. I chose PyTorch for its widespread support in the academic and industrial ML community.
+* `transformers`: Hugging Face's library, used to easily download and manage the pre-trained **RoBERTa** (sentiment) and **BERT** (emotion) models. This abstracts away complex model loading logic.
+* `nltk`: Used here primarily for basic text processing necessities, such as tokenization.
+* `sqlite3`: This is used for persistence and is part of Python's standard library (`sqlite3` module). I chose this for its **zero-dependency, self-contained nature**, making the project highly portable and resilient across different operating systems without requiring external database services.
+
+### 2. Setup Steps
+
+Follow these steps to set up the project locally. These commands are universal across Windows (using an Anaconda/WSL terminal), macOS, and Linux.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/kumaraaryan511/AI-Powered-Journaling-Logic-App.git
+cd AI-Powered-Journaling-Logic-App
+
+# 2. Create and activate a virtual environment (Recommended)
+# Using venv ensures project dependencies are isolated.
+python3 -m venv venv
+source venv/bin/activate  # Use '.\venv\Scripts\activate' on Windows Command Prompt/PowerShell
+
+# 3. Install required packages
+pip install torch transformers nltk hf-xet
+
+# 4. Download NLTK data
+# This is required for specific text processing utilities used in the analysis pipeline.
+python -c "import nltk; nltk.download('punkt')"
+
+
+
+```
+
+---
+
+
 
 ## Features
 
@@ -77,6 +121,8 @@ The CLI features clear formatting, fixed-width separators, and aligned columns f
 <img width="1486" height="1322" alt="image" src="https://github.com/user-attachments/assets/d3489b40-5869-401e-bf88-075162866d70" />
 
 
+--- 
+
 ## Technical Design & Methodology
 ### Sentiment Analysis
 
@@ -92,6 +138,7 @@ The CLI features clear formatting, fixed-width separators, and aligned columns f
 
     Process: Tokenize → Apply sigmoid to logits → Zero-out neutral label → Filter for top 3 strongest.
 
+---
 
 ## Edge Case Handling
 
@@ -103,7 +150,7 @@ The CLI features clear formatting, fixed-width separators, and aligned columns f
 
   - Invalid scores are programmatically coerced to the range [-1.0, 1.0].
     
-
+---
 
 ## AI Usage Disclosure and code verification
 
