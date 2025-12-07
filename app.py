@@ -1,4 +1,31 @@
 from score import score
+import json
+from pathlib import Path
+
+historyfile = Path("history.json")
+
+if historyfile.exists():
+    with open(historyfile, "r") as f:
+        history = json.load(f)
+else:
+    history = []
+    
+def save_history(text, result):
+    history.append({"text": text, "score": result})
+    with open(historyfile, "w") as f:
+        json.dump(history, f, indent=2)
+        
+        
+        
+def sentiment_label(score):
+    ranges = [(0.8,  "Very Happy"), (0.5,  "Happy"), (0.2,  "Moderately Happy"), (0.1,  "A little happy"), (-0.1, "Neutral"), (-0.2, "A little Sad"), (-0.5, "Moderately Sad"), (-0.8, "Sad"),]
+
+    for threshold, label in ranges:
+        if score > threshold:
+            return label
+    
+    return "Really Sad"
+
 
 def main():
     print("Give me some text!  (Press Ctrl+C to exit)")
@@ -8,23 +35,10 @@ def main():
             if not text:
                 continue
             result = score(text)
-            if result > 0.8:
-                print("Very Happy")
-            elif result > 0.5:
-                print("Happy")
-            elif result > 0.2:
-                print("Moderately Happy")
-            elif result > 0:
-                print("Neutral / A little happy")
-            elif result > -0.2:
-                print("Neutral / A little Sad")
-            elif result > -0.5:
-                print("Moderately Sad")
-            elif result > -0.8:
-                print("Sad")
-            else:
-                print("Really Sad")
+            print(sentiment_label(result))
+            
             #print(result)
+            save_history(text, result)
         except KeyboardInterrupt:
             print("\nExiting.")
             break
