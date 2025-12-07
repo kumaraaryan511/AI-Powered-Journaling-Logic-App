@@ -97,6 +97,10 @@ I initially prototyped with **VADER (Valence Aware Dictionary and sEntiment Reas
 While I tested several other multi-label BERT models, this model, trained on the **GoEmotions dataset** (known for its fine-grained classification across 27 distinct emotion labels), consistently **outshined other models** in its ability to detect specific psychological states like *admiration*, *grief*, or *surprise*. Its strength lies in picking up specific emotions, which is useful in a journaling tool.
 
 ---
+## Tests
+I have included a file of test data and its resulting output in the repository. You can find it in "test_outputs.txt"
+
+---
 
 
 
