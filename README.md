@@ -1,1 +1,108 @@
-# AI-Powered-Journaling-Logic-App
+#  AI-Powered Journaling CLI: Palo Alto Networks Intern Challenge Submission
+
+---
+
+## Overview
+
+Welcome to my submission for the **Palo Alto Networks Intern Engineer Challenge**. 
+
+My goal is to build a robust, interpretable, and resilient **text emotion analysis tool**. Users can enter free-form text and quickly obtain:
+
+* **Overall Mood:** Very Positive to Very Negative
+* **Sentiment Score:** Positive vs. Negative probability
+* **Contextual Emotions:** Top detected emotions from the text
+* **Persistence:** Save entries locally in **SQLite** for historical tracking
+
+This project focuses on performance and robustness while maintaining clean logic, readable code, reproducibility, and handling edge cases gracefully. 
+
+---
+
+## Background
+
+In real-world applications, raw textual input is rarely well-structured. The tool is designed to handle linguistic ambiguity and context by addressing common challenges like mixed slang, idioms, emojis, and inconsistent grammar.
+
+| Text Input | Expected Sentiment | Contextual Challenge |
+| :--- | :--- | :--- |
+| "I'm crushing it at work!" | Positive / Excited | "**Crushing**" can also be negative |
+| "The workload is crushing me..." | Negative / Dissapointed | Same keyword, different context |
+| "lmao that was wild 😂" | Positive / Amusement | Emoji conveys strong sentiment |
+
+---
+
+## Features
+
+### 1. Overall Mood Analysis
+
+Sentiment is calculated as **Positive probability − Negative probability** using the `cardiffnlp/twitter-roberta-base-sentiment-latest` model.
+
+| Sentiment Score | Mood Label |
+| :--- | :--- |
+| > 0.6 | **VERY POSITIVE** |
+| > 0.2 | **POSITIVE** |
+| -0.2 → 0.2 | **NEUTRAL** |
+| < -0.2 | **NEGATIVE** |
+| < -0.6 | **VERY NEGATIVE** |
+
+### 2. Contextual Emotions
+
+Uses `monologg/bert-base-cased-goemotions-original` to detect emotions.
+
+* Processes top 25 predicted emotions but displays only the **top 3 strongest** to avoid clutter.
+* **Neutral or weak emotions are ignored.** If no strong emotions are detected, the output is: `No strong emotions detected`.
+* **Positive Set:** Admiration, Amusement, Approval, Caring, Confidence, Curiosity, Desire, Excitement, Gratitude, Joy, Love, Optimism, Pride, Relief, Surprise
+* **Negative Set:** Anger, Annoyance, Disappointment, Disgust, Embarrassment, Fear, Grief, Nervousness, Remorse, Sadness
+
+### 3. Persistence + Database schema
+
+All entries are stored in a **SQLite database** (`history.db`).
+
+| Field | Type | Description |
+| :--- | :--- | :--- |
+| `id` | INTEGER PRIMARY KEY | Unique identifier for the entry. |
+| `text` | TEXT NOT NULL | Raw user input text. |
+| `score` | REAL NOT NULL | Calculated sentiment score. |
+| `emotion` | TEXT NOT NULL | Formatted string of top emotions. |
+
+**CLI Options for History:**
+
+* `Show last 3 entries`: Quick recap of recent input and predictions.
+* `Show all entries`: Full historical log.
+
+### 4. User Experience (UX) Design
+
+The CLI features clear formatting, fixed-width separators, and aligned columns for readability.
+
+#### Example Output Formatting:
+
+<img width="1486" height="1322" alt="image" src="https://github.com/user-attachments/assets/d3489b40-5869-401e-bf88-075162866d70" />
+
+
+## Technical Design & Methodology
+### Sentiment Analysis
+
+    Model: cardiffnlp/twitter-roberta-base-sentiment-latest
+    Use: Excellent at understanding general sentiment, even during ambiguity
+
+    Process: Tokenize → Compute softmax → Calculate Score: (Positive - Negative) → Map score to mood thresholds.
+
+### Contextual Emotion Extraction
+
+    Model: monologg/bert-base-cased-goemotions-original
+    Use: Good at picking up specific emotions (anger, joy, excitement), but struggles with ambiguity
+
+    Process: Tokenize → Apply sigmoid to logits → Zero-out neutral label → Filter for top 3 strongest.
+
+
+## Edge Case Handling
+
+  - Empty input is ignored.
+
+  -  Long input is truncated at 5000 characters.
+
+  - AI model exceptions are handled with try/except blocks.
+
+  - Invalid scores are programmatically coerced to the range [-1.0, 1.0].
+
+
+    
+
