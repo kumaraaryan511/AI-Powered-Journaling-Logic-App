@@ -102,7 +102,29 @@ The CLI features clear formatting, fixed-width separators, and aligned columns f
   - AI model exceptions are handled with try/except blocks.
 
   - Invalid scores are programmatically coerced to the range [-1.0, 1.0].
+    
 
+
+## AI Usage Disclosure and code verification
+
+In compliance with the challenge requirements regarding modern tools, I declare the following:
+
+### Transparency
+I utilized **ChatGPT** to assist with the development of this project. Specifically, it was used to:
+* Generate boilerplate code for the CLI interface.
+* Format the documentation structure.
+
+### Validation & Ownership
+While AI tools were used for efficiency, 
+* I have manually reviewed and understood every line of code in this repository.
+* I validated that no security flaws or logic bugs were introduced by the AI suggestions.
+* The final architectural decisions, specifically regarding how to handle ambiguous sentiment context, were made by me.
+
+### Verification Methodology
+To ensure the integrity of the AI-generated components and the pre-trained models, I used the following verification process:
+1.  **Edge Case Testing:** I manually tested ambiguous inputs (e.g., "crushing it" vs. "crushing me") to verify the sentiment analysis logic was functional.
+2.  **Persistence Check:** I inspected the local `history.db` file using a SQLite viewer to confirm data was being saved and retrieved correctly.
+3.  **Sanitization:** I verified that the code properly handles empty strings and excessively long inputs to prevent crashes.
 
     
 
