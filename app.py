@@ -43,13 +43,14 @@ def get_all_entries():
 
         
 def sentiment_label(score):
-    ranges = [(0.8,  "Very Positive"), (0.5,  "Positive"), (0.2,  "Moderately Positive"), (0.1,  "A little Positive"), (-0.1, "Neutral"), (-0.2, "A little Negative"), (-0.5, "Moderately Negative"), (-0.8, "Negative"),]
+    ranges = [(0.6,  "VERY POSITIVE"), (0.2,  "POSITIVE"), (-0.2, "NEUTRAL"), (-0.6, "NEGATIVE")]
 
     for threshold, label in ranges:
         if score > threshold:
             return label
     
-    return "Really Negative"
+    return "VERY NEGATIVE"
+
     
     
     
