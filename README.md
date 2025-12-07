@@ -71,6 +71,23 @@ python -c "import nltk; nltk.download('punkt')"
 
 ---
 
+## Technical Design & Methodology
+### Sentiment Analysis
+
+    Model: cardiffnlp/twitter-roberta-base-sentiment-latest
+    Use: Excellent at understanding general sentiment, even during ambiguity
+
+    Process: Tokenize → Compute softmax → Calculate Score: (Positive - Negative) → Map score to mood thresholds.
+
+### Contextual Emotion Extraction
+
+    Model: monologg/bert-base-cased-goemotions-original
+    Use: Good at picking up specific emotions (anger, joy, excitement), but struggles with ambiguity
+
+    Process: Tokenize → Apply sigmoid to logits → Zero-out neutral label → Filter for top 3 strongest.
+
+---
+
 
 
 ## Features
@@ -123,22 +140,6 @@ The CLI features clear formatting, fixed-width separators, and aligned columns f
 
 --- 
 
-## Technical Design & Methodology
-### Sentiment Analysis
-
-    Model: cardiffnlp/twitter-roberta-base-sentiment-latest
-    Use: Excellent at understanding general sentiment, even during ambiguity
-
-    Process: Tokenize → Compute softmax → Calculate Score: (Positive - Negative) → Map score to mood thresholds.
-
-### Contextual Emotion Extraction
-
-    Model: monologg/bert-base-cased-goemotions-original
-    Use: Good at picking up specific emotions (anger, joy, excitement), but struggles with ambiguity
-
-    Process: Tokenize → Apply sigmoid to logits → Zero-out neutral label → Filter for top 3 strongest.
-
----
 
 ## Edge Case Handling
 
