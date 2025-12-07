@@ -34,6 +34,8 @@ def main():
             text = input("> ").strip()
             if not text:
                 continue
+            if len(text) > 5000:
+                text = text[:5000]
             result = score(text)
             print(sentiment_label(result))
             
