@@ -112,7 +112,7 @@ def main():
                 else:
                     print("\nLast 3 entries:")
                     for t, s, ts in rows:
-                        print(f"Contextual Emotions: [{ts}]  |  Overall Mood: {sentiment_label(s)}  | Text: {t}")
+                        print(f"Overall Mood: {sentiment_label(s)}  |  Contextual Emotions: [{ts}]  |  Text: {t}\n")
                         
             elif cmd == "3":
                 rows = get_all_entries()
@@ -121,7 +121,7 @@ def main():
                 else:
                     print("\nAll entries:")
                     for t, s, ts in rows:
-                        print(f"Contextual Emotions: [{ts}]  |  Overall Mood: {sentiment_label(s)}  | Text: {t}")
+                        print(f"Overall Mood: {sentiment_label(s)}  |  Contextual Emotions: [{ts}]  |  Text: {t}\n")
 
 
             elif cmd == "exit":
