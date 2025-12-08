@@ -67,6 +67,7 @@ python -c "import nltk; nltk.download('punkt')"
 python app.py
 
 #NOTE: wait for the model.safetensors to load for a bit after running app.py, it may take some time
+#once the safetensors have loaded, press enter (only occurs during first run of app)
 
 ```
 
