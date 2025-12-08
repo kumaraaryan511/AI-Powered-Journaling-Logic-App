@@ -1,0 +1,83 @@
+Overall Mood: VERY NEGATIVE  |  Contextual Emotions: [Annoyance — 1.08% | Disappointment — 0.42% | Sadness — 0.40%]  |  Text: OMG work was insane today, I am totally drained 😩
+
+Overall Mood: POSITIVE  |  Contextual Emotions: [Caring — 59.25% | Relief — 1.24% | Approval — 0.91%]  |  Text: Managed to stay calm during the stressful meeting
+
+Overall Mood: POSITIVE  |  Contextual Emotions: [Optimism — 4.37% | Amusement — 2.27% | Caring — 2.08%]  |  Text: Had a nightmare, but morning coffee saved me ☕
+
+Overall Mood: NEGATIVE  |  Contextual Emotions: [Disgust — 32.61% | Annoyance — 19.79% | Embarrassment — 14.37%]  |  Text: Lazy day at home, but accomplished some chores, weird feeling
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Admiration — 76.43% | Joy — 76.16% | Love — 57.76%]  |  Text: Feeling awesome, just crushed my presentation! 💪
+
+Overall Mood: VERY NEGATIVE  |  Contextual Emotions: [Annoyance — 91.00% | Disappointment — 3.90% | Disgust — 3.20%]  |  Text: Ugh, boss piling on tasks again... help!
+
+Overall Mood: VERY NEGATIVE  |  Contextual Emotions: [Sadness — 97.90% | Disappointment — 33.92% | Grief — 1.04%]  |  Text: The workload is crushing me
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Relief — 77.89% | Joy — 50.20% | Excitement — 9.43%]  |  Text: Had a relaxing day at home, feeling super chill
+
+Overall Mood: VERY NEGATIVE  |  Contextual Emotions: [Sadness — 25.96% | Disappointment — 7.20% | Anger — 6.89%]  |  Text: Totally exhausted, can't focus anymore
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Admiration — 99.73% | Approval — 0.68% | Pride — 0.34%]  |  Text: Just nailed my coding assignment, feeling brilliant!
+
+Overall Mood: VERY NEGATIVE  |  Contextual Emotions: [Anger — 98.67% | Annoyance — 3.87% | Disappointment — 1.22%]  |  Text: My team ignored my ideas again, really frustrated
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Joy — 98.80% | Relief — 2.11% | Excitement — 1.53%]  |  Text: Finally got my project approved, so happy!
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Approval — 88.34% | Excitement — 15.86% | Joy — 15.79%]  |  Text: Super pumped for the weekend adventures! 🎉
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Surprise — 89.22% | Excitement — 12.67% | Approval — 2.37%]  |  Text: Watched Inception again, my mind is blown 🤯
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Amusement — 98.51% | Admiration — 78.33% | Joy — 3.14%]  |  Text: I laughed so hard at The Office, best stress relief
+
+Overall Mood: VERY NEGATIVE  |  Contextual Emotions: [Fear — 70.68% | Nervousness — 53.35% | Disappointment — 8.63%]  |  Text: Ugh, missed the deadline, feels terrible
+
+Overall Mood: NEUTRAL  |  Contextual Emotions: [No strong emotions detected]  |  Text: Got a promotion today but also stressed with new responsibilities
+
+Overall Mood: NEGATIVE  |  Contextual Emotions: [Sadness — 96.58% | Disappointment — 46.96% | Annoyance — 2.84%]  |  Text: The movie was sad but inspiring, weird combo of feelings
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Joy — 98.58% | Relief — 1.57% | Admiration — 0.64%]  |  Text: Stuck in traffic, but bumping my favorite tunes, kinda happy
+
+Overall Mood: NEUTRAL  |  Contextual Emotions: [No strong emotions detected]  |  Text: Team argued all day, yet I got my tasks done, mixed vibes
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Approval — 18.84% | Desire — 5.17% | Optimism — 2.38%]  |  Text: Just binge-watched Stranger Things, obsessed! 😍
+
+Overall Mood: POSITIVE  |  Contextual Emotions: [Approval — 77.04% | Optimism — 61.35% | Relief — 11.52%]  |  Text: Workload is insane, but coffee keeps me alive ☕
+
+Overall Mood: POSITIVE  |  Contextual Emotions: [Joy — 11.11% | Curiosity — 0.50% | Relief — 0.43%]  |  Text: Feeling lonely but my playlist makes me smile
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Surprise — 99.00% | Amusement — 1.13% | Excitement — 0.94%]  |  Text: OMG that plot twist in Avengers, totally shook me!
+
+Overall Mood: NEUTRAL  |  Contextual Emotions: [No strong emotions detected]  |  Text: Had a fight with a friend, but we made up later
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Love — 2.05% | Caring — 2.00% | Approval — 0.82%]  |  Text: Cried during Toy Story 3, yet heartwarming moment
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Admiration — 98.92% | Pride — 0.85% | Approval — 0.51%]  |  Text: Boss praised my work, but deadlines are stressful
+
+Overall Mood: NEUTRAL  |  Contextual Emotions: [No strong emotions detected]  |  Text: Feeling productive but mentally exhausted
+
+Overall Mood: NEUTRAL  |  Contextual Emotions: [No strong emotions detected]  |  Text: LOL, my dog stole my sandwich, hilarious
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Approval — 99.10% | Admiration — 0.85% | Relief — 0.24%]  |  Text: Stress level 100%, but I aced the test!
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Admiration — 99.59% | Approval — 1.08% | Optimism — 0.12%]  |  Text: Watched Joker, kinda dark but brilliant film
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Gratitude — 98.89% | Relief — 2.56% | Caring — 0.72%]  |  Text: Feeling grateful and tired at the same time
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Excitement — 63.30% | Optimism — 5.38% | Love — 3.02%]  |  Text: Overwhelmed by emails, yet excited for upcoming party 🎉
+
+Overall Mood: POSITIVE  |  Contextual Emotions: [Love — 99.23% | Joy — 1.14% | Admiration — 0.38%]  |  Text: I love my job, but meetings are draining
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Joy — 87.63% | Relief — 4.71% | Admiration — 1.55%]  |  Text: Missed my gym session, but had a delicious meal, guilty pleasure
+
+Overall Mood: VERY NEGATIVE  |  Contextual Emotions: [Sadness — 99.16% | Disappointment — 15.13% | Grief — 8.77%]  |  Text: Watched Titanic again, tears everywhere 😢
+
+Overall Mood: NEGATIVE  |  Contextual Emotions: [Nervousness — 92.02% | Disappointment — 3.20% | Embarrassment — 3.17%]  |  Text: My friend made me laugh, but I still feel anxious
+
+Overall Mood: VERY NEGATIVE  |  Contextual Emotions: [Sadness — 6.93% | Disappointment — 2.14% | Nervousness — 0.39%]  |  Text: Mixed feelings about leaving my hometown
+
+Overall Mood: NEUTRAL  |  Contextual Emotions: [No strong emotions detected]  |  Text: Finally completed my project, but exhausted physically
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Surprise — 97.42% | Excitement — 1.15% | Gratitude — 0.65%]  |  Text: OMG cliffhanger in Game of Thrones, heart racing!
+
+Overall Mood: VERY POSITIVE  |  Contextual Emotions: [Excitement — 8.49% | Joy — 0.84% | Surprise — 0.82%]  |  Text: Excited about new opportunities, scared to fail
+
+Overall Mood: POSITIVE  |  Contextual Emotions: [Amusement — 99.36% | Joy — 0.96% | Admiration — 0.30%]  |  Text: LOL, my cat walked on my laptop mid-meeting3
