@@ -53,19 +53,20 @@ Follow these steps to set up the project locally. These commands are universal a
 git clone https://github.com/kumaraaryan511/AI-Powered-Journaling-Logic-App.git
 cd AI-Powered-Journaling-Logic-App
 
-# 2. Create and activate a virtual environment (Recommended)
-# Using venv ensures project dependencies are isolated.
-python3 -m venv venv
-source venv/bin/activate  # Use '.\venv\Scripts\activate' on Windows Command Prompt/PowerShell
+# 2. Create and activate a virtual environment 
+python3 -m venv venv    #SKIP IF USING WINDOWS
+source venv/bin/activate  #SKIP IF USING WINDOWS
 
 # 3. Install required packages
 pip install torch transformers nltk hf-xet
 
 # 4. Download NLTK data
-# This is required for specific text processing utilities used in the analysis pipeline.
 python -c "import nltk; nltk.download('punkt')"
 
+# 5. Run the app
+python app.py
 
+#NOTE: wait for the model.safetensors to load for a bit after running app.py, it may take some time
 
 ```
 
